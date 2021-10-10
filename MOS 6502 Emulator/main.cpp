@@ -12,6 +12,7 @@ int main() {
 	for (int i = 0; i < 0x10000; i++) {
 		CPUMemory[i] = &Memory[i];
 	}
+	//Test rom must be loaded at 0x0a offset
 	for (int i = 0; i + 0x000a < 0x10000; i++) {
 		*CPUMemory[i + 0x000a] = Rom->at(i);
 	}
